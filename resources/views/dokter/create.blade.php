@@ -10,116 +10,119 @@
 </head>
 
 <body>
-
-    <h1>RS Sejahtera</h1>
-
-    <h2>Tambah Data Dokter</h2>
-
-    <form action="{{ route('dokter.store') }}" method="POST">
-        @csrf
-
-        <div>
-            <label for="nama_dokter">Nama Dokter</label>
-            <input
-                type="text"
-                id="nama_dokter"
-                name="nama_dokter"
-                value="{{ old('nama_dokter') }}"
-                required>
+    <div class="container mt-4">
+        <div class="mb-3">
+            <h1>RS Sejahtera</h1>
+            <h2>Tambah Data Dokter</h2>
         </div>
+        
+        <form action="{{ route('dokter.store') }}" method="POST">
+            @csrf
 
-        <br>
+            <div>
+                <label for="nama_dokter" class="form-label">Nama Dokter</label>
+                <input
+                    class="form-control"
+                    type="text"
+                    id="nama_dokter"
+                    name="nama_dokter"
+                    value="{{ old('nama_dokter') }}"
+                    required>
+            </div>
 
-        <div>
-            <label for="jenis_kelamin" class="form-input">Jenis Kelamin</label>
+            <br>
 
-            <select id="jenis_kelamin" name="jenis_kelamin" required>
-                <option value="">-- Pilih Jenis Kelamin --</option>
+            <div>
+                <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
 
-                <option value="Laki-laki"
-                    {{ old('jenis_kelamin') == 'Laki-laki' ? 'selected' : '' }}>
-                    Laki-laki
-                </option>
+                <select id="jenis_kelamin" name="jenis_kelamin" class="form-select" required>
+                    <option value="">-- Pilih Jenis Kelamin --</option>
 
-                <option value="Perempuan"
-                    {{ old('jenis_kelamin') == 'Perempuan' ? 'selected' : '' }}>
-                    Perempuan
-                </option>
-            </select>
-        </div>
+                    <option value="Laki-laki"
+                        {{ old('jenis_kelamin') == 'Laki-laki' ? 'selected' : '' }}>
+                        Laki-laki
+                    </option>
 
-        <br>
+                    <option value="Perempuan"
+                        {{ old('jenis_kelamin') == 'Perempuan' ? 'selected' : '' }}>
+                        Perempuan
+                    </option>
+                </select>
+            </div>
 
-        <div>
-            <label for="spesialisasi" class="form-input">Spesialisasi</label>
+            <br>
 
-            <select id="spesialisasi" name="spesialisasi" required>
-                <option value="">-- Pilih Spesialisasi --</option>
+            <div>
+                <label for="spesialisasi" class="form-label">Spesialisasi</label>
 
-                <option value="Umum"
-                    {{ old('spesialisasi') == 'Umum' ? 'selected' : '' }}>
-                    Umum
-                </option>
+                <select id="spesialisasi" name="spesialisasi" class="form-select" required>
+                    <option value="">-- Pilih Spesialisasi --</option>
 
-                <option value="Kandungan"
-                    {{ old('spesialisasi') == 'Kandungan' ? 'selected' : '' }}>
-                    Kandungan
-                </option>
+                    <option value="Umum"
+                        {{ old('spesialisasi') == 'Umum' ? 'selected' : '' }}>
+                        Umum
+                    </option>
 
-                <option value="Gigi"
-                    {{ old('spesialisasi') == 'Gigi' ? 'selected' : '' }}>
-                    Gigi
-                </option>
+                    <option value="Kandungan"
+                        {{ old('spesialisasi') == 'Kandungan' ? 'selected' : '' }}>
+                        Kandungan
+                    </option>
 
-                <option value="Dalam"
-                    {{ old('spesialisasi') == 'Dalam' ? 'selected' : '' }}>
-                    Dalam
-                </option>
+                    <option value="Gigi"
+                        {{ old('spesialisasi') == 'Gigi' ? 'selected' : '' }}>
+                        Gigi
+                    </option>
 
-                <option value="Anak"
-                    {{ old('spesialisasi') == 'Anak' ? 'selected' : '' }}>
-                    Anak
-                </option>
+                    <option value="Dalam"
+                        {{ old('spesialisasi') == 'Dalam' ? 'selected' : '' }}>
+                        Dalam
+                    </option>
 
-                <option value="Bedah"
-                    {{ old('spesialisasi') == 'Bedah' ? 'selected' : '' }}>
-                    Bedah
-                </option>
-            </select>
-        </div>
+                    <option value="Anak"
+                        {{ old('spesialisasi') == 'Anak' ? 'selected' : '' }}>
+                        Anak
+                    </option>
 
-        <br>
+                    <option value="Bedah"
+                        {{ old('spesialisasi') == 'Bedah' ? 'selected' : '' }}>
+                        Bedah
+                    </option>
+                </select>
+            </div>
 
-        <div>
-            <label for="nomor_telepon">Nomor Telepon</label>
-            <input
-                type="text"
-                id="nomor_telepon"
-                name="nomor_telepon"
-                value="{{ old('nomor_telepon') }}"
-                placeholder="081234567890"
-                required>
-        </div>
+            <br>
 
-        <br>
+            <div>
+                <label for="nomor_telepon" class="form-label">Nomor Telepon</label>
+                <input
+                    type="text"
+                    id="nomor_telepon"
+                    name="nomor_telepon"
+                    value="{{ old('nomor_telepon') }}"
+                    placeholder="081234567890"
+                    required>
+            </div>
 
-        <div>
-            <label for="alamat">Alamat</label>
+            <br>
 
-            <textarea
-                id="alamat"
-                name="alamat"
-                rows="3"
-                required>{{ old('alamat') }}</textarea>
-        </div>
+            <div>
+                <label for="alamat" class="form-label">Alamat</label>
 
-        <br>
+                <textarea
+                    id="alamat"
+                    name="alamat"
+                    class="form-control"
+                    rows="3"
+                    required>{{ old('alamat') }}</textarea>
+            </div>
 
-        <button type="submit">Simpan</button>
+            <br>
 
-        <a href="{{ route('dokter.index') }}">Kembali</a>
-    </form>
+            <button type="submit" class="btn btn-primary">Simpan</button>
 
+            <a href="{{ route('dokter.index') }}" class="btn btn-secondary">Kembali</a>
+        </form>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
 </body>
